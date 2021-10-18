@@ -1,7 +1,22 @@
 const container = document.getElementById("container");
 const grid = document.getElementById('grid');
-let gridSize;
-const btn = document.querySelector('button');
+const clearbtn = document.getElementById('clear');
+const TwentyxTwenty = document.getElementById('sizeSetter');
+let gridSize = 16;
+createGrid(16);
+
+const userInputTwenty = TwentyxTwenty.addEventListener('click', function () {
+  determineSize(20)
+})
+
+
+
+function determineSize(num) {
+  if (20) {
+    createGrid(20);
+    console.log('minnie');
+  }
+}
 
 
 function createGrid(gridSize) {
@@ -14,7 +29,7 @@ function createGrid(gridSize) {
     grid.appendChild(newDivs).className = 'boxes';
   }
 }
-createGrid(16);
+
 
 
 function sketch(e) {
@@ -22,6 +37,13 @@ function sketch(e) {
 }
 
 
+
+clearbtn.addEventListener('click', cleargrid);
+
+function cleargrid() {
+  location.reload();
+  return false;
+}
 
 
 
