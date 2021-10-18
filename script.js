@@ -1,24 +1,51 @@
 const container = document.getElementById("container");
 const grid = document.getElementById('grid');
 const clearbtn = document.getElementById('clear');
-const TwentyxTwenty = document.getElementById('sizeSetter');
-let gridSize = 16;
+const twentyxTwenty = document.getElementById('sizeSetter20');
+const sixteenxSixteen = document.getElementById('sizeSetter16');
+const thirtyxthirty = document.getElementById('sizeSetter30');
 createGrid(16);
 
-const userInputTwenty = TwentyxTwenty.addEventListener('click', function () {
+// UI buttons
+const userInputTwenty = twentyxTwenty.addEventListener('click', function () {
   determineSize(20)
 })
 
+const userInputSixteen = sixteenxSixteen.addEventListener('click', function () {
+  determineSize(16);
+})
 
+const userInputThirty = thirtyxthirty.addEventListener('click', function () {
+  determineSize(30);
+})
 
+const clrBtnInput = clearbtn.addEventListener('click', function () {
+  determineSize(gridSizel)
+});
+
+let gridSizel;
+
+// Function that clears/resizes grid based on user button input
 function determineSize(num) {
   if (20) {
-    createGrid(20);
-    console.log('minnie');
+    cleargrid();
+    createGrid(num);
+    gridSizel = num;
+  } else if (16) {
+    cleargrid();
+    createGrid(num);
+    gridSizel = num;
+  } else if (30) {
+    cleargrid();
+    createGrid(num);
+    gridSizel = num;
+  } else if (gridSizel) {
+    cleargrid();
+    createGrid(Number(gridSizel));
   }
 }
 
-
+//function that creates grid
 function createGrid(gridSize) {
   grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
   grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
@@ -29,20 +56,13 @@ function createGrid(gridSize) {
     grid.appendChild(newDivs).className = 'boxes';
   }
 }
-
-
-
 function sketch(e) {
   e.target.style.backgroundColor = 'black';
 }
 
-
-
-clearbtn.addEventListener('click', cleargrid);
-
+//clears grid
 function cleargrid() {
-  location.reload();
-  return false;
+  grid.innerHTML = ''
 }
 
 
