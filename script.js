@@ -1,13 +1,31 @@
-let divCounter = 0;
+const container = document.getElementById("container");
 
-function addElement() {
+
+
+/* function createDiv() {
   const newDiv = document.createElement('div');
-  newDiv.setAttribute("class", 'divborder');
-  const currentDiv = document.getElementById('div1');
-  document.body.insertBefore(newDiv, currentDiv);
+  container.appendChild(newDiv).className = 'grids ';
+  document.getElementById('container').appendChild(newDiv);
+}
+*/
+
+function createGrid() {
+  for (i = 0; i < 16; i++) {
+    const columns = document.createElement('div');
+    container.appendChild(columns).className = 'columns';
+
+    for (j = 0; j < 16; j++) {
+      const rows = document.createElement('div');
+      container.appendChild(rows).className = 'rows';
+    }
+  }
 }
 
+createGrid();
 
-for (addElement(); divCounter < 15; divCounter++) {
-  addElement();
-}
+
+
+
+
+
+

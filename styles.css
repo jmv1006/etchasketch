@@ -1,6 +1,23 @@
 
-.divborder {
-  border: 1px solid black;
+
+#container {
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 20px;
+  height: 20px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid black;
   width: 20px;
   height: 20px;
 }
