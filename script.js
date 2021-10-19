@@ -4,7 +4,12 @@ const clearbtn = document.getElementById('clear');
 const twentyxTwenty = document.getElementById('sizeSetter20');
 const sixteenxSixteen = document.getElementById('sizeSetter16');
 const thirtyxthirty = document.getElementById('sizeSetter30');
+const redColor = document.getElementById('colorSetterRed');
+const blackColor = document.getElementById('colorSetterBlack');
+const blueColor = document.getElementById('colorSetterBlue');
+
 createGrid(16);
+let currentMode = 'black';
 
 // UI buttons
 const userInputTwenty = twentyxTwenty.addEventListener('click', function () {
@@ -52,18 +57,62 @@ function createGrid(gridSize) {
 
   for (i = 0; i < gridSize ** 2; i++) {
     const newDivs = document.createElement('div');
-    newDivs.addEventListener('mouseover', sketch)
+    newDivs.addEventListener('mouseover', sketch);
     grid.appendChild(newDivs).className = 'boxes';
   }
 }
-function sketch(e) {
-  e.target.style.backgroundColor = 'black';
+
+const userPickedRed = redColor.addEventListener('click', function () {
+  setMode(1);
+})
+
+const userPickedBlack = blackColor.addEventListener('click', function () {
+  setMode(0);
+})
+
+const userPickedBlue = blueColor.addEventListener('click', function () {
+  setMode(2);
+})
+
+
+function setMode(num) {
+  //here setup function that takes  user input from button and changes currentMode variable based on user choice
+  if (0) {
+    currentMode = 'black';
+    sketch;
+    console.log(currentMode);
+  } else if (1) {
+    currentMode = 'red';
+    sketch;
+    console.log(currentMode);
+  } else if (2) {
+    currentMode = 'blue';
+    sketch;
+    console.log('this is blue');
+  } else {
+    console.log('min');
+  }
 }
+
+function sketch(e) {
+  if (currentMode == 'black') {
+    e.target.style.backgroundColor = 'black';
+  } else if (currentMode == 'red') {
+    e.target.style.backgroundColor = 'red';
+  } else if (currentMode == 'blue') {
+    e.target.style.backgroundColor = 'blue';
+  }
+}
+
+
 
 //clears grid
 function cleargrid() {
   grid.innerHTML = ''
 }
+
+
+
 
 
 
