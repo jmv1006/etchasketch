@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   padding: 0px;
   background-image: url("https://shop.renolit.com/out/pictures/master/product/1/Cremeweiss_1379%20Ulti-Matt_CreamWhite_1379_Ulti-Matt_02.20.11.000001%20-%20504700%20OS.jpg");
 }

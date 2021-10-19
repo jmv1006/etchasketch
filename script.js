@@ -63,36 +63,17 @@ function createGrid(gridSize) {
 }
 
 const userPickedRed = redColor.addEventListener('click', function () {
-  setMode(1);
+  currentMode = 'red';
+  sketch;
 })
-
 const userPickedBlack = blackColor.addEventListener('click', function () {
-  setMode(0);
+  currentMode = 'black';
+  sketch;
 })
-
 const userPickedBlue = blueColor.addEventListener('click', function () {
-  setMode(2);
+  currentMode = 'blue';
+  sketch;
 })
-
-
-function setMode(num) {
-  //here setup function that takes  user input from button and changes currentMode variable based on user choice
-  if (0) {
-    currentMode = 'black';
-    sketch;
-    console.log(currentMode);
-  } else if (1) {
-    currentMode = 'red';
-    sketch;
-    console.log(currentMode);
-  } else if (2) {
-    currentMode = 'blue';
-    sketch;
-    console.log('this is blue');
-  } else {
-    console.log('min');
-  }
-}
 
 function sketch(e) {
   if (currentMode == 'black') {
