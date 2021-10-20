@@ -1,5 +1,4 @@
 
-
 .uib {
   padding: 10px;
   margin: 10px;
@@ -12,6 +11,7 @@ body {
   justify-content: center;
   align-items: flex-end;
   padding: 0px;
+  margin: 0px;
   background-image: url("https://shop.renolit.com/out/pictures/master/product/1/Cremeweiss_1379%20Ulti-Matt_CreamWhite_1379_Ulti-Matt_02.20.11.000001%20-%20504700%20OS.jpg");
 }
 
@@ -40,11 +40,16 @@ body {
   border: 1.5px solid black;
 }
 
+.noBorder {
+  border: none;
+}
+
 #grid {
   display: grid;
   width: 500px;
   height: 500px;
-  border: 2px solid white;
+  border: 1px solid #F2F0E6;
+  background-color: #F2F0E6;
 }
 
 .sketch {
